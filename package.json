@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/hws-wao/core",
   "dependencies": {
+    "config": "^1.10.0",
     "date-utils": "^1.2.16"
   }
 }
