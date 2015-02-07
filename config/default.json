@@ -1,16 +1,6 @@
 {
   "server" : {
+    "name" : "default",
     "port" : 8972
-  },
-
-  "logger" : {
-    "appenders" : [
-      {
-        "type": "file",
-        "category": "application",
-        "filename": "logs/application.log",
-        "pattern": "-yyyy-MM-dd"
-      }
-    ]
   }
 }
