@@ -130,7 +130,7 @@
           throw "Bind data is too many.";
         }
       }
-      return variable;
+      return $('<div>').text(variable).html();
     }
 
     /**
