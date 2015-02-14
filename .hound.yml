@@ -1,3 +1,3 @@
 java_script:
-  config_file: config/.jshintrc
+  config_file: .jshintrc
   ignore_file: node_modules
