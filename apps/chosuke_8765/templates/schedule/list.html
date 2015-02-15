@@ -32,9 +32,9 @@
       <div class="table-responsive container">
         <table class="table">
           <thead>
-            <tr data-wao-iterator="event.schedule">
+            <tr>
               <th>名前</th>
-              <th data-wao-bind="event.schedule.date">11/21(水) 19:00〜</th>
+              <th data-wao-iterator="event.schedule" data-wao-bind="event.schedule.date">11/21(水) 19:00〜</th>
               <th>11/23(金) 19:00〜</th>
               <th>11/23(金) 19:00〜</th>
               <th data-wao="keep">コメント</th>
@@ -43,7 +43,7 @@
               <td data-wao-bind="event.entry.name">
                 <a>中村</a>
               </td>
-              <td data-wao-iterator="event.entry.schedule"><i class="fa fa-circle text-success"></i></td>
+              <td data-wao-iterator="event.entry.schedule"><i data-wao-bind-class="event.entry.schedule.reply|replyClass" class="fa fa-circle text-success"></i></td>
               <td><i class="fa fa-warning text-warning"></i></td>
               <td><i class="fa fa-remove text-danger"></i></td>
               <td data-wao-bind="event.entry.comment">たくさん飲みます</td>
@@ -143,8 +143,17 @@
     </footer>
     <script src="../bootstrap/js/jquery-1.11.1.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
-    <script>
+    <script data-wao="remove" type="text/javascript" src="../_LOCAL/bind-data.js"></script>
+    <script data-wao="remove" type="text/javascript" src="../_LOCAL/wao-bind.js"></script>
+    <script type="text/javascript">
 $(function(){
+  $('html').wao_bind({
+    'bindData' : {
+      '_DB'   : _DB,
+      '_FILE' : _FILE,
+      '_USR'  : _USR
+    }
+  });
   $('#btn-open').click(function(){
     $(this).hide();
     $('#reply').hide().removeClass('hidden')

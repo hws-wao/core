@@ -51,5 +51,17 @@
     </footer>
     <script type="text/javascript" src="../../bootstrap/js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script data-wao="remove" type="text/javascript" src="../../_LOCAL/bind-data.js"></script>
+    <script data-wao="remove" type="text/javascript" src="../../_LOCAL/wao-bind.js"></script>
+    <script type="text/javascript">
+$(function(){
+  $('html').wao_bind({
+    'bindData' : {
+      '_DB'   : _DB,
+      '_FILE' : _FILE
+    }
+  });
+});
+    </script>
   </body>
 </html>
