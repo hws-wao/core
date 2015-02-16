@@ -92,6 +92,14 @@
       var iterator = settings.iterators[iteratorPath];
       if (iterator) {
         retVar = iterator.this[iterator.idx];
+      } else if ($.isArray(retVar)) {
+        if (retVar.length == 1) {
+          retVar = retVar[0];
+        } else if (retVar.length == 0) {
+          throw "Bind data is not found.";
+        } else {
+          throw "Bind data is too many.";
+        }
       }
       return retVar;
     }
@@ -195,6 +203,8 @@
         // 自分自身がiteratorならiterate処理を行う
         var iterator = $this.attr('data-wao-iterator');
         if (iterator) {
+          console.log('$("' + settings.tagStack.join('>') + '")');
+          console.log('iterator:=' + iterator);
           iterate($this, iterator);
         }
         // data-wao-bind
@@ -203,6 +213,8 @@
         if (bind) { // この要素にbind属性が指定されていたら
           $this.html(bindVar(getVar(bind, $this.html())));
           $this.removeAttr('data-wao-bind'); // 属性を削除
+          console.log('$("' + settings.tagStack.join('>') + '")');
+          console.log('bind:=' + bind + ', value:=' + $this.html());
         }
         // data-wao-bind-xxx
         // 自分自身にbind-xxx（属性bind）が含まれていたら属性bind処理を行う
@@ -220,6 +232,8 @@
                 bindAttr) : '';
               $this.attr(bindAttr, bindVar(getVar(bind, bindAttrVal)));
               $this.removeAttr(attr.name); // 属性を削除
+              console.log('$("' + settings.tagStack.join('>') + '")');
+              console.log('bind:=' + bind + ', attr:=' + bindAttr + ', value:=' + $this.attr(bindAttr));
             }
           }
         });
