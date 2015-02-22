@@ -144,6 +144,7 @@
     </footer>
     <script src="../bootstrap/js/jquery-1.11.1.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script data-wao="remove" type="text/javascript" src="../_LOCAL/exec_at_server/userdefine.js"></script>
     <script data-wao="remove" type="text/javascript" src="../_LOCAL/bind-data.js"></script>
     <script data-wao="remove" type="text/javascript" src="../_LOCAL/wao-bind.js"></script>
     <script data-wao="remove" type="text/javascript">
@@ -152,7 +153,7 @@ $(function(){
     'bindData' : {
       '_DB'   : _DB,
       '_FILE' : _FILE,
-      '_USR'  : _USR
+      '_USR'  : $.data($('html')[0], 'userdefine')
     }
   });
 });

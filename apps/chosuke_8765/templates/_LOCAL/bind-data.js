@@ -52,18 +52,3 @@ var _DB = {
   }
 };
 var _FILE = {};
-var _USR = {
-  "replyClass": {
-    "0": "fa fa-remove text-danger",
-    "1": "fa fa-warning text-warning",
-    "2": "fa fa-circle text-success"
-  },
-  "appendClass": function(v, o) {
-    var a = (o + ' ' + v).split(' ');
-    var r = [];
-    for (var i in a) {
-      a[i] == '' ? void(0) : r.push(a[i]);
-    }
-    return r.join(' ');
-  }
-};
