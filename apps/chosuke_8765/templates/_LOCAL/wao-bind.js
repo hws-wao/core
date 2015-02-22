@@ -18,7 +18,8 @@
     var settings = $.extend({
       'bindData': {
         '_DB': {},
-        '_FILE': {}
+        '_FILE': {},
+        '_USR': {}
       },
       'iterators': {},
       'tagStack': []
@@ -122,20 +123,24 @@
       });
       // 繰り返し処理本体
       // iteratorは配列であることが保障されているのでfor-inを使用
-      for (var idx in iterator) {
-        var $temporary = $template.clone(); // テンプレートをコピー
-        // bind処理用にiterator情報を作成する
-        var mysettings = $.extend(settings, {});
-        mysettings.iterators[iteratorPath] = {
-          'this': iterator, // iterator変数（配列）
-          'idx': idx // インデクス値
-        };
-        var tmptag = mysettings.tagStack.pop();
-        $temporary.wao_bind(mysettings); // 繰り返しbind処理
-        mysettings.tagStack.push(tmptag);
-        $stack.append($temporary); // 1件分の生成結果を親要素に追加
+      if (iterator) {
+        for (var idx in iterator) {
+          var $temporary = $template.clone(); // テンプレートをコピー
+          // bind処理用にiterator情報を作成する
+          var mysettings = $.extend(settings, {});
+          mysettings.iterators[iteratorPath] = {
+            'this': iterator, // iterator変数（配列）
+            'idx': idx // インデクス値
+          };
+          var tmptag = mysettings.tagStack.pop();
+          $temporary.wao_bind(mysettings); // 繰り返しbind処理
+          mysettings.tagStack.push(tmptag);
+          $stack.append($temporary); // 1件分の生成結果を親要素に追加
+        }
+        $this.after($stack.html()).remove();
+      } else {
+        $this.remove();
       }
-      $this.after($stack.html()).remove();
     }
 
     // -------------------------------------
@@ -144,6 +149,9 @@
     var getIterator = function(iteratorPath) {
       var iterator = getVar(iteratorPath);
       // iteratorとして使用する変数は配列でなければならない
+      if (iterator === undefined) {
+        return iterator;
+      }
       return ($.isArray(iterator)) ? iterator : [iterator];
     }
 
@@ -199,6 +207,15 @@
       try {
         var $this = $(this);
         settings.tagStack.push($this.prop('tagName'));
+
+        // 要素の削除
+        var waoAttr = $this.attr('data-wao');
+        if (waoAttr == 'remove') {
+          $this.remove();
+          settings.tagStack.pop();
+          return;
+        }
+
         // data-wao-iterator
         // 自分自身がiteratorならiterate処理を行う
         var iterator = $this.attr('data-wao-iterator');
@@ -245,6 +262,14 @@
         var src = $this.attr('src');
         if (src) {
           $this.attr('src', bindGetParam(src));
+        }
+        var action = $this.attr('action');
+        if (action) {
+          $this.attr('action', bindGetParam(action));
+        }
+        var content = $this.attr('content');
+        if (content) {
+          $this.attr('content', bindGetParam(content));
         }
 
         // 自分の子供にすべて同じことを実行
