@@ -1,0 +1,3 @@
+[submodule "apps/wao_8887/templates"]
+	path = apps/wao_8887/templates
+	url = ssh://git@113.36.109.139:21022/wao/wao-ide.git
