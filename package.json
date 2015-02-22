@@ -26,11 +26,12 @@
     "multiparty": "^4.1.1",
     "mv": "^2.0.3",
     "node-zip": "^1.1.0",
-    "wao-querystring": "git://github.com/hws-wao/wao-querystring.git",
+    "puid": "^1.0.2",
     "rimraf": "^2.2.8",
     "type-is": "^1.6.0",
     "underscore": "^1.7.0",
-    "unzip2": "^0.2.5"
+    "unzip2": "^0.2.5",
+    "wao-querystring": "git://github.com/hws-wao/wao-querystring.git"
   },
   "devDependencies": {
     "jasmine": "^2.2.1",
