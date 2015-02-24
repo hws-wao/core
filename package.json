@@ -30,6 +30,7 @@
     "rimraf": "^2.2.8",
     "type-is": "^1.6.0",
     "underscore": "^1.7.0",
+    "underscore.string": "^3.0.3",
     "unzip2": "^0.2.5",
     "wao-querystring": "git://github.com/hws-wao/wao-querystring.git"
   },
