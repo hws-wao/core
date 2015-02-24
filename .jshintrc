@@ -35,6 +35,8 @@
     "after" : false,
     "afterEach" : false,
     "expect" : false,
-    "_" : false
+    "_" : false,
+    "jqueryify" : false,
+    "JQUERY_URL" : false
   }
 }
