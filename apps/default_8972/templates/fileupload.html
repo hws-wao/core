@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>ファイルアップロード</title>
+  </head>
+  <body>
+    <h1>ファイルアップロードサンプル</h1>
+    WAOでファイルアップロードするサンプルです。
+    <h2>アップロード先のファイルパスを指定したファイルアップロード</h2>
+    /templates/fileupload/sample.png にファイルをアップロードする。
+    <a href="/fileupload/sample.png" >アップロードする場所のリンク</a>
+    <form method="post" enctype="multipart/form-data">
+      <input type="file" name="_FILE./templates/fileupload/sample.png" />
+      <input type="hidden" name="_FILE" value="/bbbb/bbb/n.png" />
+      <button type="submit">アップロード</button>
+    </form>
+
+    /hidden/fileupload/sample.png にファイルをアップロードする。
+    <form method="post" enctype="multipart/form-data">
+      <input type="file" name="_FILE.{file_path}" />
+      <button type="submit">アップロード</button>
+    </form>
+
+    <form method="post">
+      <input type="hidden" name="_FILE" value="/aaaa/bbb" />
+      <input type="hidden" name="_method" value="delete" />
+      <button type="submit">アップロード</button>
+    </form>
+  </body>
+</html>
