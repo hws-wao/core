@@ -1,6 +1,6 @@
 {
   "server" : {
-    "name" : "default",
-    "port" : 8972
+    "name" : "chosuke",
+    "port" : 8765
   }
 }
