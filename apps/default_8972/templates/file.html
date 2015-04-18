@@ -1,11 +1,14 @@
 <html>
   <head>
     <title>ファイル操作サンプル</title>
+
   </head>
   <body>
     <h1>ファイル操作サンプル</h1>
     WAOでファイルを操作するサンプルです。
     <h2>ファイルアップロード</h2>
+    <h3>画像を表示</h3>
+    <img data-wao-bind-src="/hidden/fileupload/sample.png._path" />
     <h3>アップロード先のファイルパスを指定したファイルアップロード</h3>
     /templates/fileupload/sample.png にファイルをアップロードする。
     <a href="/fileupload/sample.png" >アップロードする場所のリンク</a>
@@ -31,7 +34,6 @@
       <input type="file" name="_FILE./hidden/fileupload/directory/" />
       <button type="submit">ディレクトリアップロード</button>
     </form>
-
 
     <h2>ファイル削除</h2>
     /templates/fileupload/sample.png を消す。<br />
