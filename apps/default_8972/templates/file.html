@@ -15,9 +15,9 @@
       <button type="submit">アップロード</button>
     </form>
 
-    /hidden/fileupload/sample.png にファイルをアップロードする。
+    /hidden/fileupload/directory にファイルをアップロードする。
     <form method="post" enctype="multipart/form-data">
-      <input type="file" name="_FILE.{file_path}" />
+      <input type="file" name="_FILE./hidden/fileupload/directory/sample.png" />
       <button type="submit">アップロード</button>
     </form>
 
@@ -26,6 +26,12 @@
       <input type="hidden" name="_method" value="delete" />
       <button type="submit">アップロード</button>
     </form>
+
+    <form method="post" enctype="multipart/form-data">
+      <input type="file" name="_FILE./hidden/fileupload/directory/" />
+      <button type="submit">ディレクトリアップロード</button>
+    </form>
+
 
     <h2>ファイル削除</h2>
     /templates/fileupload/sample.png を消す。<br />
@@ -37,9 +43,9 @@
     </form>
 
     <h2>ディレクトリ削除</h2>
-    /templates/fileeesss を消す。<br />
+    /hidden/fileupload/directory を消す。<br />
     <form method="post">
-      <input type="hidden" name="_FILE" value="/templates/fileeesss" />
+      <input type="hidden" name="_FILE" value="/hidden/fileupload/directory" />
       <input type="hidden" name="_method" value="delete" />
       <button type="submit">ファイル削除</button>
     </form>
