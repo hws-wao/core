@@ -8,32 +8,47 @@
     WAOでファイルを操作するサンプルです。
     <h2>ファイルアップロード</h2>
     <h3>画像を表示</h3>
-    <img data-wao-bind-src="/hidden/fileupload/sample.png._path" />
+    <img data-wao-bind-src="_FILE./hidden/fileupload/sample.png._path" ></img>
+    <img data-wao-bind-src="webapp.port" ></img>
+
+    <span data-wao-bind="webapp.name">調整さんplus</span>
+    <span data-wao-bind="webapp.port">調整さんplus</span>
+
+
+    <hr />
+
+
     <h3>アップロード先のファイルパスを指定したファイルアップロード</h3>
     /templates/fileupload/sample.png にファイルをアップロードする。
     <a href="/fileupload/sample.png" >アップロードする場所のリンク</a>
     <form method="post" enctype="multipart/form-data">
       <input type="file" name="_FILE./templates/fileupload/sample.png" />
-      <input type="hidden" name="_FILE" value="/bbbb/bbb/n.png" />
       <button type="submit">アップロード</button>
     </form>
 
-    /hidden/fileupload/directory にファイルをアップロードする。
+
+    <hr />
+
+
+    非公開フォルダ /hidden/fileupload/directory にファイルをアップロードする。
     <form method="post" enctype="multipart/form-data">
       <input type="file" name="_FILE./hidden/fileupload/directory/sample.png" />
       <button type="submit">アップロード</button>
     </form>
 
-    <form method="post">
-      <input type="hidden" name="_FILE" value="/aaaa/bbb" />
-      <input type="hidden" name="_method" value="delete" />
-      <button type="submit">アップロード</button>
-    </form>
 
+    <hr />
+
+
+    /hidden/fileupload/directory にファイルをアップロードする。
     <form method="post" enctype="multipart/form-data">
       <input type="file" name="_FILE./hidden/fileupload/directory/" />
       <button type="submit">ディレクトリアップロード</button>
     </form>
+
+
+    <hr />
+
 
     <h2>ファイル削除</h2>
     /templates/fileupload/sample.png を消す。<br />
@@ -44,6 +59,10 @@
       <button type="submit">ファイル削除</button>
     </form>
 
+
+    <hr />
+
+
     <h2>ディレクトリ削除</h2>
     /hidden/fileupload/directory を消す。<br />
     <form method="post">
@@ -51,5 +70,6 @@
       <input type="hidden" name="_method" value="delete" />
       <button type="submit">ファイル削除</button>
     </form>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </body>
 </html>
