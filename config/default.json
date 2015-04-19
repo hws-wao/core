@@ -1,7 +1,7 @@
 {
   "server" : {
-    "name" : "default",
-    "port" : 8972
+    "name" : "chosuke",
+    "port" : 8765
   },
 
   "secret" : "204466bb18293cc76d0344bd54225d16f709985ec377cf129f29eba97221e7e6c6079f74807422cc5d692973b1286f811813d6cbd58c45ed60fcf7ca"
