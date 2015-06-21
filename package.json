@@ -12,8 +12,12 @@
   },
   "author": "",
   "license": "MIT",
+  "preferGlobal": true,
   "bugs": {
     "url": "https://github.com/hws-wao/core/issues"
+  },
+  "bin": {
+    "wao": "lib/cli/index.js"
   },
   "homepage": "https://github.com/hws-wao/core",
   "dependencies": {
