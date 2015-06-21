@@ -1,6 +1,6 @@
 {
-  "name": "WAO",
-  "version": "0.0.1",
+  "name": "wao",
+  "version": "2.1.0",
   "description": "",
   "main": "app.js",
   "scripts": {
