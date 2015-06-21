@@ -4,5 +4,10 @@
     "port" : 1111
   },
   "debug_mode" : true,
-  "secret" : "204466bb18293cc76d0344bd54225d16f709985ec377cf129f29eba97221e7e6c6079f74807422cc5d692973b1286f811813d6cbd58c45ed60fcf7ca"
+  "secret" : "204466bb18293cc76d0344bd54225d16f709985ec377cf129f29eba97221e7e6c6079f74807422cc5d692973b1286f811813d6cbd58c45ed60fcf7ca",
+  "mail" : {
+    "host" : "localhost",
+    "port" : "25",
+    "from" : "test@example.com"
+  }
 }
