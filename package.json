@@ -1,6 +1,6 @@
 {
-  "name": "WAO",
-  "version": "0.0.1",
+  "name": "wao",
+  "version": "2.1.1",
   "description": "",
   "main": "app.js",
   "scripts": {
@@ -12,13 +12,18 @@
   },
   "author": "",
   "license": "MIT",
+  "preferGlobal": true,
   "bugs": {
     "url": "https://github.com/hws-wao/core/issues"
+  },
+  "bin": {
+    "wao": "lib/cli/index.js"
   },
   "homepage": "https://github.com/hws-wao/core",
   "dependencies": {
     "config": "^1.10.0",
     "cookie": "^0.1.2",
+    "fs-extra": "^0.20.0",
     "jsdom": "^3.1.0",
     "log4js": "^0.6.22",
     "mime": "^1.3.4",
@@ -34,7 +39,8 @@
     "underscore": "^1.7.0",
     "unzip2": "^0.2.5",
     "url": "^0.10.3",
-    "wao-querystring": "git://github.com/hws-wao/wao-querystring.git"
+    "wao-querystring": "git://github.com/hws-wao/wao-querystring.git",
+    "yargs": "^3.12.0"
   },
   "devDependencies": {
     "jasmine": "^2.2.1",
