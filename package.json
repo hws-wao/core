@@ -39,6 +39,7 @@
     "underscore": "^1.7.0",
     "unzip2": "^0.2.5",
     "url": "^0.10.3",
+    "wao-api-sign": "0.0.3",
     "wao-querystring": "git://github.com/hws-wao/wao-querystring.git",
     "yargs": "^3.12.0"
   },
